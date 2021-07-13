@@ -91,8 +91,8 @@
             <div class="login-content">
                 <h2>Log in to Twirrer</h2>
                 <form class="login-form">
-                    <input type="text" placeholder="Phone, email, or username">
-                    <input type="type" placeholder="Password">
+                    <input type="text" placeholder="Phone, email, or username" class="login-user-info">
+                    <input type="type" class="login-password" placeholder="Password">
                     <div>
                         <button class="login-form-btn" type="button">Log In</button>
                         <input type="checkbox" id="check" class="login-form-checkbox">
@@ -109,8 +109,16 @@
 
         </div>
         <!-- End of Login -->
+        <!--login modal-->
+        <div class="login-modal">
+            <i class="fas fa-times"></i>
+            <p>The username and password you entered did not match our records. Please double check and try again</p>
+        </div>
+        <!--end login modal-->
     </section>
+
     <!-- End Main Page-->
+
     <!--feed page-->
     <section class="feeds-page">
         <!--Feeds Nav-->
@@ -387,8 +395,33 @@
         <!--End Feeds-content-->
         <button type="button" class="post-btn">
             + <i class="fas fa-feather-alt"></i>Post
-        </button>
-        <h1 id="header">hesder1</h1>
+         </button>
+        <!--Post modal -->
+        <div class="modal-wrapper">
+            <div class="modal">
+                <div class="modal-header">
+                    <i class="fas fa-times"></i>
+                    <button type="button">Post</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img src="images/Rihana.jpg">
+                    </div>
+                    <input type="text" placeholder="What's happing?" class="modal-input">
+                    <i class="far fa-smile"></i>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-icons">
+                        <i class="far fa-image"></i>
+                        <i class="fas fa-camera"></i>
+                        <i class="far fa-chart-bar"></i>
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Post modal -->
+        <!--<h1 id="header">hesder1</h1>
         <h1 id="header1">test</h1>
         <ul id="under" class="list">
             <li id="list">Joy</li>
@@ -397,7 +430,7 @@
         </ul>
         <h1 class="head">This is heading</h1>
         <button class="but" onclick="click" type="button"> Click</button>
-        <p id="mainParagraph" class="paragraphy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quia ut ad quas?</p>
+        <p id="mainParagraph" class="paragraphy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quia ut ad quas?</p> -->
 
 
     </section>

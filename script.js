@@ -4,7 +4,15 @@ const loginPage = document.querySelector('.login-page');
 const middleContent = document.querySelector('.middle-content')
 const btnTop = document.querySelector('.btn-top');
 const feedPage = document.querySelector('.feeds-page');
-console.log(feedPage);
+const loginModal = document.querySelector('.login-modal');
+const modalX = document.querySelector('.login-modal i');
+const loginFormBtn = document.querySelector('.login-form-btn');
+const postBtn = document.querySelector('.post-btn');
+const modalWrapper = document.querySelector('.modal-wrapper');
+const modal = document.querySelector('.modal');
+const closeIcon = document.querySelector('.modal-wrapper i')
+console.log(closeIcon);
+
 
 //function go to page
 goToPage = () => {
@@ -19,16 +27,43 @@ middleContent.addEventListener('click', (e) => {
     })
     //login function
 btnTop.addEventListener('click', () => {
-    const userInfo = document.querySelector('.user-info');
-    const password = document.querySelector('.password');
-    if (userInfo.value !== '' && password.value !== '') {
-        mainPage.style.display = 'none';
-        feedPage.style.display = 'block'
+        const userInfo = document.querySelector('.user-info');
+        const password = document.querySelector('.password');
+        if (userInfo.value !== '' && password.value !== '') {
+            mainPage.style.display = 'none';
+            feedPage.style.display = 'block'
 
-    } else {
-        goToPage()
-    }
+        } else {
+            goToPage();
+            loginModal.style.display = 'block'
+        }
 
+    })
+    //close modal
+modalX.addEventListener('click', () => {
+        loginModal.style.display = 'none'
+    })
+    //loginFormBtn
+loginFormBtn.addEventListener('click', () => {
+        const userLoginIfo = document.querySelector('.login-user-info');
+        const userPassword = document.querySelector('.login-password');
+        if (userLoginIfo.value !== '' && userPassword.value !== '') {
+            loginPage.style.display = 'none';
+            feedPage.style.display = 'block'
+        } else {
+            loginModal.style.display = 'block'
+        }
+    })
+    //News feed page
+    //post
+postBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    modalWrapper.classList.add('modal-wrapper-display')
+    console.log(modal);
+})
+closeIcon.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalWrapper.classList.remove('modal-wrapper-display')
 })
 
 
