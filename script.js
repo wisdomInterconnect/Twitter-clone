@@ -10,8 +10,18 @@ const loginFormBtn = document.querySelector('.login-form-btn');
 const postBtn = document.querySelector('.post-btn');
 const modalWrapper = document.querySelector('.modal-wrapper');
 const modal = document.querySelector('.modal');
-const closeIcon = document.querySelector('.modal-wrapper i')
-console.log(closeIcon);
+const closeIcon = document.querySelector('.modal-header i');
+const modalFooterPlus = document.querySelector('.modal-footer span');
+const modalPostBtn = document.querySelector('.modal-header button');
+const modalInput = document.querySelector('.modal-input');
+const user = document.querySelector('.user');
+console.log(user);
+const sideBar = document.querySelector('.sidebar');
+console.log(sideBar);
+const sidebarWrapper = document.querySelector('.sidebar-wrapper')
+console.log(sidebarWrapper);
+const sidebarClose = document.querySelector('.sidebar-header i');
+console.log(sidebarClose);
 
 
 //function go to page
@@ -59,11 +69,44 @@ loginFormBtn.addEventListener('click', () => {
 postBtn.addEventListener('click', () => {
     modal.style.display = 'block';
     modalWrapper.classList.add('modal-wrapper-display')
-    console.log(modal);
+
 })
 closeIcon.addEventListener('click', () => {
     modal.style.display = 'none';
     modalWrapper.classList.remove('modal-wrapper-display')
+    if (modalInput.value !== "") {
+        modalInput.value = "";
+        changeOpacity(0.5)
+    }
+
+})
+
+const changeOpacity = x => {
+    modalPostBtn.style.opacity = x;
+    modalFooterPlus.style.opacity = x;
+
+}
+modalInput.addEventListener('keypress', (e) => {
+    if (e.target.value !== "") {
+        changeOpacity(1)
+    }
+})
+modalInput.addEventListener('blur', (e) => {
+        if (e.target.value === '') {
+            changeOpacity(0.5)
+        }
+    })
+    //sidebar
+user.addEventListener('click', () => {
+    sideBar.classList.add('sidebar-display');
+    sidebarWrapper.classList.add('sidebar-wrapper-display')
+
+})
+sidebarClose.addEventListener('click', () => {
+    sideBar.classList.remove('sidebar-display');
+    sidebarWrapper.classList.remove('sidebar-wrapper-display')
+
+    // sidebarWrapper.classList.remove('sidebar-wrapper-display')
 })
 
 
