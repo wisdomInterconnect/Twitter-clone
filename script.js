@@ -15,13 +15,19 @@ const modalFooterPlus = document.querySelector('.modal-footer span');
 const modalPostBtn = document.querySelector('.modal-header button');
 const modalInput = document.querySelector('.modal-input');
 const user = document.querySelector('.user');
-console.log(user);
 const sideBar = document.querySelector('.sidebar');
-console.log(sideBar);
-const sidebarWrapper = document.querySelector('.sidebar-wrapper')
-console.log(sidebarWrapper);
+const sidebarWrapper = document.querySelector('.sidebar-wrapper');
 const sidebarClose = document.querySelector('.sidebar-header i');
-console.log(sidebarClose);
+const toggle = document.querySelector('.toggle');
+const circle = document.querySelector('.circle');
+const darkElements = document.querySelectorAll('.dark-mode-1');
+console.log(darkElements);
+const darkElements1 = document.querySelectorAll('.dark-mode-2');
+console.log(darkElements1);
+const lightText = document.querySelectorAll('.light-text')
+console.log(lightText);
+const borders = document.querySelectorAll('.border');
+console.log(borders);
 
 
 //function go to page
@@ -103,10 +109,18 @@ user.addEventListener('click', () => {
 
 })
 sidebarClose.addEventListener('click', () => {
-    sideBar.classList.remove('sidebar-display');
-    sidebarWrapper.classList.remove('sidebar-wrapper-display')
+        sideBar.classList.remove('sidebar-display');
+        sidebarWrapper.classList.remove('sidebar-wrapper-display')
 
-    // sidebarWrapper.classList.remove('sidebar-wrapper-display')
+        // sidebarWrapper.classList.remove('sidebar-wrapper-display')
+    })
+    //dark mode
+toggle.addEventListener('click', () => {
+    circle.classList.toggle('move');
+    Array.from(darkElements).map(darkEl1 => darkEl1.classList.toggle('dark-1'));
+    Array.from(darkElements1).map(darkEl2 => darkEl2.classList.toggle('dark-2'));
+    Array.from(lightText).map(lightEl1 => lightEl1.classList.toggle('light'));
+    Array.from(borders).map(borderEl1 => borderEl1.classList.toggle('border-color'))
 })
 
 
